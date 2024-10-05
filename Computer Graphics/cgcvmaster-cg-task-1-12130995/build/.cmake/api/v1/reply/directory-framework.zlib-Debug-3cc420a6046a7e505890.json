@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "framework/zlib",
+		"source" : "/workspaces/cgcvmaster-cg-task-1-12130995/build/dependencies/zlib"
+	}
+}

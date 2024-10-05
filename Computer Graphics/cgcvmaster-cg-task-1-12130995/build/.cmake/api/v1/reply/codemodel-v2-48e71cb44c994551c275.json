@@ -1,0 +1,222 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "framework",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-framework-Debug-308e10f56f9c91364e93.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "framework",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "framework/zlib",
+					"jsonFile" : "directory-framework.zlib-Debug-3cc420a6046a7e505890.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "/workspaces/cgcvmaster-cg-task-1-12130995/build/dependencies/zlib",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "framework/libpng",
+					"jsonFile" : "directory-framework.libpng-Debug-bae5d9e9e59718d662ec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "/workspaces/cgcvmaster-cg-task-1-12130995/build/dependencies/libpng",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "framework/rapidjson",
+					"jsonFile" : "directory-framework.rapidjson-Debug-9da4d125ef7c589f47a4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "/workspaces/cgcvmaster-cg-task-1-12130995/build/dependencies/rapidjson"
+				},
+				{
+					"build" : "task1",
+					"jsonFile" : "directory-task1-Debug-fe2c9cf9a02fc010b8bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "task1",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CG1"
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "framework",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "zlib",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "libpng",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "rapidjson",
+					"parentIndex" : 1
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "task1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "framework::@217a96c3a62328a73ef4",
+					"jsonFile" : "target-framework-Debug-990a37d825c0db6981db.json",
+					"name" : "framework",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "libpng::@4091994f2ea1203d5709",
+					"jsonFile" : "target-libpng-Debug-9d6309b0fb90fc92ee7c.json",
+					"name" : "libpng",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "task1::@e4d0983e0b10c261a67f",
+					"jsonFile" : "target-task1-Debug-6d0cdb128821ca585c84.json",
+					"name" : "task1",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "zlib::@a933a1254459d962fb22",
+					"jsonFile" : "target-zlib-Debug-2669bf6a7db128c13c7c.json",
+					"name" : "zlib",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspaces/cgcvmaster-cg-task-1-12130995/build",
+		"source" : "/workspaces/cgcvmaster-cg-task-1-12130995/build/cmake"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
