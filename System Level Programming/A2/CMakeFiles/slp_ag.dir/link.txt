@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/slp_ag.dir/vector.c.o CMakeFiles/slp_ag.dir/slp_ag.c.o -o slp_ag  -lpthread 

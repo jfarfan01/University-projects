@@ -1,0 +1,90 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "current file dbg",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true,
+          "justMyCode": false
+        }
+      ],
+      "preLaunchTask": "C/C++: build active file make",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "tinytest dbg",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/tinytest",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true,
+          "justMyCode": false
+        }
+      ],
+      "preLaunchTask": "C/C++: build active file make",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "smalltest dbg",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/smalltest",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true,
+          "justMyCode": false
+        }
+      ],
+      "preLaunchTask": "C/C++: build active file make",
+      "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/javier/SLP/slps23g116/A5",
+      "program": "/home/javier/SLP/slps23g116/A5/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
