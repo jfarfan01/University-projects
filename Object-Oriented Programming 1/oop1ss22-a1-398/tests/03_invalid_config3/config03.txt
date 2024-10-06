@@ -1,0 +1,5 @@
+Boris;ImissEU;Joe:CAESAR,affe00affe001111;Karl:CAESAR,675f64a2d900ab99;
+Karl;ichBekommCoronaInDenGriff;Basti:OTHERCIPHER,ba311deadbeef111;Boris:CAESAR,675f64a2d900ab99;Werner:ASCII,8474839eefe221aa;
+Werner;sauberBleiben;Karl:ASCII,8474839eefe221aa;
+Joe$;IamPresident;Boris:CAESAR,affe00affe001111;
+Basti;BussiBussi30ProzentMehr;Karl:OTHERCIPHER,ba311deadbeef111;

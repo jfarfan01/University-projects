@@ -1,0 +1,79 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< l
+> Please enter user name!
+?   > 
+< Aleks
+> Please enter your password!
+?   > 
+< safePassword
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< s
+> Contacts of user: Aleks
+> -----------------------------------
+>          CAESAR | Alex
+>           ASCII | Clemens
+>           ASCII | David
+>           ASCII | Felix
+>          CAESAR | Florian
+>          CAESAR | Kajetan
+>           ASCII | Katrin
+>           ASCII | Kilian
+>           ASCII | Lena
+>           ASCII | Marlene
+>           ASCII | Michi
+>           ASCII | Muhammed
+>          CAESAR | Nives
+>          CAESAR | Simone
+>          CAESAR | Thomas
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< a
+> Who would you like to add as a contact?
+?   > 
+< wrongName
+> Error: you cannot add this user as a contact!
+?   > 
+< Markus
+> What cipher would you like to use?
+?   > 
+< wrongCipher
+> Error: invalid cipher!
+?   > 
+< ascii
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< s
+> Contacts of user: Aleks
+> -----------------------------------
+>          CAESAR | Alex
+>           ASCII | Clemens
+>           ASCII | David
+>           ASCII | Felix
+>          CAESAR | Florian
+>          CAESAR | Kajetan
+>           ASCII | Katrin
+>           ASCII | Kilian
+>           ASCII | Lena
+>           ASCII | Markus
+>           ASCII | Marlene
+>           ASCII | Michi
+>           ASCII | Muhammed
+>          CAESAR | Nives
+>          CAESAR | Simone
+>          CAESAR | Thomas
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< q
+> Bye!

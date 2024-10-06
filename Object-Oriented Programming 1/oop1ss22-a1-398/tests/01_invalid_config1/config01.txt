@@ -1,0 +1,3 @@
+Boris;mysafepassword;Donald:ASCII,0123456789abcdef;
+Donald;ilovemyhair;Boris:ASCII,0123456789abcdef;
+Donald;ilovemyhair;

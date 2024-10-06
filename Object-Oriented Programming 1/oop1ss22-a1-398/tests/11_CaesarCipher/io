@@ -1,0 +1,18 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< t
+> What cipher would you like to use?
+?   > 
+< CaEsar
+> Enter your message now:
+?   > 
+< Hi Students I hope you like our assignment and we wish you happy programming
+> 
+> Sending ...
+> KKXUVGEOWUNIPSEZRWQJLHOVUCXTJJNNHPYBOGWFZKXIZRUIDRUZQUOHUCRNJQG
+> Reading ...
+> Recipient: SYSTEM
+> Sender: SYSTEM
+> HISTUDENTSIHOPEYOULIKEOURASSIGNMENTANDWEWISHYOUHAPPYPROGRAMMING

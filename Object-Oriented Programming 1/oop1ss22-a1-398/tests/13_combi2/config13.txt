@@ -1,0 +1,5 @@
+Karl;ichBekommCoronaInDenGriff;Basti:ASCII,ba311deadbeef111;
+Thomas;dermitdempoebelreist;Basti:CAESAR,1b1C3450696a849c;Gernot:CAESAR,123456789abcdef0;Melanie:NONE,abcdef00abcdef00;
+Melanie;gehtsdemthomasgutgehtsallengut;Thomas:NONE,abcdef00abcdef00;
+Gernot;amschoenstenlebtsichslaptoplos;Thomas:CAESAR,123456789abcdef0;
+Basti;genugistgenug;Karl:ASCII,ba311deadbeef111;Thomas:CAESAR,1b1C3450696a849c;

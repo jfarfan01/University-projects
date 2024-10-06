@@ -1,0 +1,28 @@
+Welcome to the OOP1 Messaging Service!
+Would you like to [r]egister, [l]ogin or [t]est?
+  > Please enter user name!
+  > Please enter your password!
+  > 
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Which message would you like to read?
+  > 
+Reading ...
+Recipient: Melanie
+Sender: Thomas
+ICHHABEHEUTEALLESGELOESCHTBEIWHATSAPPUNDNOCHEINMALALLESDURCHSUCHTUNDWEGGEWORFENGENIAL
+
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Who would you like to write to?
+  > What should be the (file)name of your message?
+  > Enter your message now:
+  > 
+Sending ...
+Recipient: Thomas
+Sender: Melanie
+OKAYHABICHGEMERKTWEILAUFEINMALALLESWEGWARVONDIRESISTALLESWEGDEINEGANZENCHATS
+
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Bye!

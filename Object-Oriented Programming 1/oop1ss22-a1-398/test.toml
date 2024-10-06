@@ -1,0 +1,161 @@
+# Testcase Structure:
+#    name: String, // The name of the testcase
+#    subname: Option<String>, // used for unittests later
+#    testcase_type: String, //Only IO supported now
+#    description: Option<String>, // optional description
+#    args: Option<String>, // command line arguments 
+#    cflags: Option<String>, // compile flags
+#    tags: Option<Tags>, // tags for unit tests
+#    in_file: Option<String>, // stdin file 
+#    exp_file: Option<String>, // stdout file
+#    in_string: Option<String>, // stdin string (in_file has higher priority)
+#    exp_string: Option<String>, // stdout string (out_file has higher priority)
+#    exp_retvar: Option<i32>, // optional expected status code
+#    timeout: Option<i32>, // timeout in seconds .. default is 5 sec
+#    env_vars:Option<String>, // optional environment parameters RAND_SEED=123,foo=bar
+
+[project_definition]
+project_name = "a1"
+makefile_path = "."
+maketarget = "all"
+
+
+## TESTCASE 1
+[[testcases]]
+name = "Invalid Config: User twice"
+testcase_type = "IO"
+description = "Invalid: User is twice in Config file"
+args = ["config/config01.txt"]
+in_file = "tests/01_invalid_config1/in"
+exp_file = "tests/01_invalid_config1/out"
+exp_retvar = 4
+
+## TESTCASE 2
+[[testcases]]
+name = "Invalid Config: User has himself as contact"
+testcase_type = "IO"
+description = "Invalid: User has himself as contact"
+args = ["config/config02.txt"]
+in_file = "tests/02_invalid_config2/in"
+exp_file = "tests/02_invalid_config2/out"
+exp_retvar = 4
+
+## TESTCASE 3
+[[testcases]]
+name = "Invalid Config: Invalid characters"
+testcase_type = "IO"
+description = "Invalid characters in name, invalid cipher"
+args = ["config/config03.txt"]
+in_file = "tests/03_invalid_config3/in"
+exp_file = "tests/03_invalid_config3/out"
+exp_retvar = 4
+
+## TESTCASE 4
+[[testcases]]
+name = "Valid Config: show contacts"
+testcase_type = "IO"
+description = "Valid Config: show contacts of a user"
+args = ["config/config04.txt"]
+in_file = "tests/04_valid_config/in"
+exp_file = "tests/04_valid_config/out"
+exp_retvar = 0
+
+## TESTCASE 5
+[[testcases]]
+name = "Registration"
+testcase_type = "IO"
+description = "Adding a newly registered user to Config file"
+args = ["config/config05.txt"]
+in_file = "tests/05_registration/in"
+exp_file = "tests/05_registration/out"
+exp_retvar = 0
+add_out_file = "config/config05.txt"
+add_exp_file = "config/config05_ref.txt"
+
+## TESTCASE 6
+[[testcases]]
+name = "AddContact"
+testcase_type = "IO"
+description = "Adding a new Contact to contact list"
+args = ["config/config06.txt"]
+in_file = "tests/06_addcontact/in"
+exp_file = "tests/06_addcontact/out"
+exp_retvar = 0
+add_out_file = "config/config06.txt"
+add_exp_file = "config/config06_ref.txt"
+
+## TESTCASE 7
+[[testcases]]
+name = "Send and read"
+testcase_type = "IO"
+description = "Send Message and read a massage"
+args = ["config/config07.txt"]
+in_file = "tests/07_send_read1/in"
+exp_file = "tests/07_send_read1/out"
+exp_retvar = 0
+add_out_file = "messages/07MelanieThomas.txt"
+add_exp_file = "tests/07_send_read1/07MelanieThomas_ref.txt"
+
+## TESTCASE 8
+[[testcases]]
+name = "Failure and sending successful"
+testcase_type = "IO"
+description = "Having a failure and then successfully sending a message"
+args = ["config/config08.txt"]
+in_file = "tests/08_send_read2/in"
+exp_file = "tests/08_send_read2/out"
+exp_retvar = 0
+add_out_file = "messages/08donaldTwitter.txt"
+add_exp_file = "tests/08_send_read2/08donaldTwitter_ref.txt"
+
+## TESTCASE 9
+[[testcases]]
+name = "Test NoneCipher"
+testcase_type = "IO"
+description = "Testing NoneCipher implementation using Menu 't'"
+args = ["config/config09.txt"]
+in_file = "tests/09_NoneCipher/in"
+exp_file = "tests/09_NoneCipher/out"
+exp_retvar = 0
+
+## TESTCASE 10
+[[testcases]]
+name = "Test AsciiCipher"
+testcase_type = "IO"
+description = "Testing AsciiCipher implementation using Menu 't'"
+args = ["config/config10.txt"]
+in_file = "tests/10_AsciiCipher/in"
+exp_file = "tests/10_AsciiCipher/out"
+exp_retvar = 0
+
+## TESTCASE 11
+[[testcases]]
+name = "Test CaesarCipher"
+testcase_type = "IO"
+description = "Testing CaesarCipher implementation using Menu 't'"
+args = ["config/config11.txt"]
+in_file = "tests/11_CaesarCipher/in"
+exp_file = "tests/11_CaesarCipher/out"
+exp_retvar = 0
+
+## TESTCASE 12
+[[testcases]]
+name = "register, add contact, messages, AsciiCipher"
+testcase_type = "IO"
+args = ["config/config12.txt"]
+in_file = "tests/12_combi1/in"
+exp_file = "tests/12_combi1/out"
+add_out_file = "config/config12.txt"
+add_exp_file = "tests/12_combi1/config12_ref.txt"
+exp_retvar = 0
+
+## TESTCASE 13
+[[testcases]]
+name = "login, messages, CaesarCipher"
+testcase_type = "IO"
+args = ["config/config13.txt"]
+in_file = "tests/13_combi2/in"
+exp_file = "tests/13_combi2/out"
+add_out_file = "messages/13bastiThomas4.txt"
+add_exp_file = "tests/13_combi2/13bastiThomas4_ref.txt"
+exp_retvar = 0

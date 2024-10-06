@@ -1,0 +1,5 @@
+Boris;mysafepassword;Donald:ASCII,abcdef03421ef3e1;
+Donald;ilovemyhair;Boris:ASCII,abcdef03421ef3e1;Ursula:CAESAR,003ea22888840200;
+Ursula;EUforEver;Donald:CAESAR,003ea22888840200;Ursula:CAESAR,003ea2288884aa00;
+Karl;schonWiederEinKanzler;Werner:NONE,0123456789abcdef;
+Werner;sauberBleiben;Karl:NONE,0123456789abcdef;

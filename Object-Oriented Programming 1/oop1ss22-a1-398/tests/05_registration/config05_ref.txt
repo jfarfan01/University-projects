@@ -1,0 +1,17 @@
+Aleks;safePassword;Alex:CAESAR,0123456789abcdef;Clemens:ASCII,0123456789abcdee;David:ASCII,0123456789abcded;Felix:ASCII,0123456789abcdeb;Florian:CAESAR,0123456789abcdea;Kajetan:CAESAR,0123456789abcde9;Katrin:ASCII,0123456789abcde8;Kilian:ASCII,0123456789abcde7;Lena:ASCII,0123456789abcde6;Marlene:ASCII,0123456789abcde4;Michi:ASCII,0123456789abcdec;Muhammed:ASCII,0123456789abcde4;Nives:CAESAR,0123456789abcde1;Simone:CAESAR,0123456789abcde3;Thomas:CAESAR,0123456789abcde2;
+Alex;unsafePassword;Aleks:CAESAR,0123456789abcdef;
+Clemens;2good2cast;Aleks:ASCII,0123456789abcdee;
+David;helloWorld;Aleks:ASCII,0123456789abcded;
+Michi;math4life;Aleks:ASCII,0123456789abcdec;
+Felix;autoForEach;Aleks:ASCII,0123456789abcdeb;
+Florian;testingTesting;Aleks:CAESAR,0123456789abcdea;
+Kajetan;LookAtMyHack;Aleks:CAESAR,0123456789abcde9;
+Katrin;baumaster;Aleks:ASCII,0123456789abcde8;
+Kilian;gitlabIsLife;Aleks:ASCII,0123456789abcde7;
+Lena;AskMeAnything;Aleks:ASCII,0123456789abcde6;
+Marlene;gitKommMit;Aleks:ASCII,0123456789abcde4;
+Muhammed;Cplusplus;Aleks:ASCII,0123456789abcde4;
+Simone;PlusPlusC;Aleks:CAESAR,0123456789abcde3;
+Thomas;EasyReferences;Aleks:CAESAR,0123456789abcde2;
+Nives;NewNewNew;Aleks:CAESAR,0123456789abcde1;
+Markus;IAmNew;

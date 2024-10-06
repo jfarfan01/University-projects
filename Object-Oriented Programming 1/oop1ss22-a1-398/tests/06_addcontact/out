@@ -1,0 +1,56 @@
+Welcome to the OOP1 Messaging Service!
+Would you like to [r]egister, [l]ogin or [t]est?
+  > Please enter user name!
+  > Please enter your password!
+  > 
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Contacts of user: Aleks
+-----------------------------------
+         CAESAR | Alex
+          ASCII | Clemens
+          ASCII | David
+          ASCII | Felix
+         CAESAR | Florian
+         CAESAR | Kajetan
+          ASCII | Katrin
+          ASCII | Kilian
+          ASCII | Lena
+          ASCII | Marlene
+          ASCII | Michi
+          ASCII | Muhammed
+         CAESAR | Nives
+         CAESAR | Simone
+         CAESAR | Thomas
+
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Who would you like to add as a contact?
+  > Error: you cannot add this user as a contact!
+  > What cipher would you like to use?
+  > Error: invalid cipher!
+  > 
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Contacts of user: Aleks
+-----------------------------------
+         CAESAR | Alex
+          ASCII | Clemens
+          ASCII | David
+          ASCII | Felix
+         CAESAR | Florian
+         CAESAR | Kajetan
+          ASCII | Katrin
+          ASCII | Kilian
+          ASCII | Lena
+          ASCII | Markus
+          ASCII | Marlene
+          ASCII | Michi
+          ASCII | Muhammed
+         CAESAR | Nives
+         CAESAR | Simone
+         CAESAR | Thomas
+
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Bye!

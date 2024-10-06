@@ -1,0 +1,3 @@
+Em4nuel7;OuiOui;Donald:ASCII,3fbec2bb92ee97ba;
+World;allovertheplace;Donald:ASCII,0c32dc66d866c84e;
+Donald;ILoveMyHair;Em4nuel7:ASCII,3fbec2bb92ee97ba;World:ASCII,0c32dc66d866c84e;

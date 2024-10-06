@@ -1,0 +1,13 @@
+Welcome to the OOP1 Messaging Service!
+Would you like to [r]egister, [l]ogin or [t]est?
+  > Please enter user name!
+  > Please enter your password!
+  > 
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Contacts of user: Markus
+-----------------------------------
+
+
+Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+  > Bye!

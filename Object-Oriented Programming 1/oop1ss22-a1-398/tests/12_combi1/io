@@ -1,0 +1,116 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< r
+> Please enter user name!
+?   > 
+< Donald
+> Please enter your password!
+?   > 
+< ILoveMyHair
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< a
+> Who would you like to add as a contact?
+?   > 
+< World
+> What cipher would you like to use?
+?   > 
+< ascii
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< a
+> Who would you like to add as a contact?
+?   > 
+< Em4nuel7
+> What cipher would you like to use?
+?   > 
+< ascii
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< s
+> Contacts of user: Donald
+> -----------------------------------
+>           ASCII | Em4nuel7
+>           ASCII | World
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< wrongusername
+> What should be the (file)name of your message?
+?   > 
+< messages/12DonaldWorld1.txt
+> Enter your message now:
+?   > 
+< Every time I speak of the haters and losers I do so with great love and affection
+> Error: message could not be sent!
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< World
+> What should be the (file)name of your message?
+?   > 
+< wrongpath/12DonaldWorld2.txt
+> Enter your message now:
+?   > 
+< Every time I speak of the haters and losers I do so with great love and affection
+> Error: message could not be sent!
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< World
+> What should be the (file)name of your message?
+?   > 
+< messages/12DonaldWorld1.txt
+> Enter your message now:
+?   > 
+< Most corrupt election in history by far We won
+> 
+> Sending ...
+> Recipient: World
+> Sender: Donald
+> 77 79 83 84 67 79 82 82 85 80 84 69 76 69 67 84 73 79 78 73 78 72 73 83 84 79 82 89 66 89 70 65 82 87 69 87 79 78
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< Em4nuel7
+> What should be the (file)name of your message?
+?   > 
+< messages/12DonaldEmanuel.txt
+> Enter your message now:
+?   > 
+< Sorry losers and haters but my IQ is one of the highest and you all know it Please dont feel so stupid or insecure its not your fault
+> 
+> Sending ...
+> Recipient: Em4nuel7
+> Sender: Donald
+> 83 79 82 82 89 76 79 83 69 82 83 65 78 68 72 65 84 69 82 83 66 85 84 77 89 73 81 73 83 79 78 69 79 70 84 72 69 72 73 71 72 69 83 84 65 78 68 89 79 85 65 76 76 75 78 79 87 73 84 80 76 69 65 83 69 68 79 78 84 70 69 69 76 83 79 83 84 85 80 73 68 79 82 73 78 83 69 67 85 82 69 73 84 83 78 79 84 89 79 85 82 70 65 85 76 84
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< q
+> Bye!

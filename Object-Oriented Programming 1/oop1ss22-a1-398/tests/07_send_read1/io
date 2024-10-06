@@ -1,0 +1,49 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< l
+> Please enter user name!
+?   > 
+< Melanie
+> Please enter your password!
+?   > 
+< gehtsdemthomasgutgehtsallengut
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< d
+> Which message would you like to read?
+?   > 
+< tests/07_send_read1/07ThomasMelanie.txt
+> 
+> Reading ...
+> Recipient: Melanie
+> Sender: Thomas
+> ICHHABEHEUTEALLESGELOESCHTBEIWHATSAPPUNDNOCHEINMALALLESDURCHSUCHTUNDWEGGEWORFENGENIAL
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< Thomas
+> What should be the (file)name of your message?
+?   > 
+< messages/07MelanieThomas.txt
+> Enter your message now:
+?   > 
+< Okay hab ich gemerkt weil auf einmal alles weg war von dir Es ist alles weg  Deine ganzen Chats
+> 
+> Sending ...
+> Recipient: Thomas
+> Sender: Melanie
+> OKAYHABICHGEMERKTWEILAUFEINMALALLESWEGWARVONDIRESISTALLESWEGDEINEGANZENCHATS
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< q
+> Bye!

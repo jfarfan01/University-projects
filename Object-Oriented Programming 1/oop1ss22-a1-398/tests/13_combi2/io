@@ -1,0 +1,81 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< l
+> Please enter user name!
+?   > 
+< Basti
+> Please enter your password!
+?   > 
+< genugistgenug
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< d
+> Which message would you like to read?
+?   > 
+< tests/13_combi2/13thomasBasti1.txt
+> 
+> Reading ...
+> Recipient: Basti
+> Sender: Thomas
+> WIRMUESSENBEIBANKENAUFPASSENDIEWOLLENDASAMMONTAGWEITERBESPRECHENUNDENTSCHEIDENMRDFUERNACHMITTAGSBETREUUNGMITRECHTSANSPRUCHUNDVEREINBARUNGENBUNDGEMEINDENOHNELAENDERMEGASPRENGSTOFF
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< Thomas
+> What should be the (file)name of your message?
+?   > 
+< messages/13bastiThomas2.txt
+> Enter your message now:
+?   > 
+< Gar nicht gut Wie kannst du das aufhalten
+> 
+> Sending ...
+> Recipient: Thomas
+> Sender: Basti
+> HCRPJEJTHWTYJGMAOPSVEWFATCUHICNTFP
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< d
+> Which message would you like to read?
+?   > 
+< tests/13_combi2/13thomasBasti3.txt
+> 
+> Reading ...
+> Recipient: Basti
+> Sender: Thomas
+> ICHTERRORISIEREGERADEMUNDKUNDMACHEDENENDASKLARICHBINDANICHTDRINNENLEIDER
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< e
+> Who would you like to write to?
+?   > 
+< Thomas
+> What should be the (file)name of your message?
+?   > 
+< messages/13bastiThomas4.txt
+> Enter your message now:
+?   > 
+< Bitte Kann ich ein Bundesland aufhetzen
+> 
+> Sending ...
+> Recipient: Thomas
+> Sender: Basti
+> CKTVFMCNOKCJFKPBVPDGTNCNECUHIGVZFP
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< q
+> Bye!

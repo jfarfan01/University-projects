@@ -1,0 +1,30 @@
+# use for next testrunner version
+> Welcome to the OOP1 Messaging Service!
+> Would you like to [r]egister, [l]ogin or [t]est?
+?   > 
+< show
+> Error: invalid option!
+?   > 
+< l
+> Please enter user name!
+?   > 
+< Karl
+> Please enter your password!
+?   > 
+< ichBekommCoronaInDenGriff
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< s
+> Contacts of user: Karl
+> -----------------------------------
+>          CAESAR | Basti
+>          CAESAR | Boris
+>           ASCII | Werner
+> 
+> 
+> Choose your option: [a]dd contact, [e]ncrypt, [d]ecrypt, [s]how or [q]uit
+?   > 
+< q
+> Bye!
