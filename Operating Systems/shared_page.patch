@@ -1,0 +1,210 @@
+From 5b5ffb3087b79e2bd066115023586c2e9e4c06ec Mon Sep 17 00:00:00 2001
+From: Javier Farfan Roca <javier.farfanroca@student.tugraz.at>
+Date: Wed, 22 Nov 2023 13:53:38 +0100
+Subject: [PATCH] seems fine
+
+---
+ arch/x86/64/source/ArchMemory.cpp           |  1 +
+ common/include/kernel/ProcessRegistry.h     |  2 ++
+ common/include/kernel/Thread.h              |  2 ++
+ common/include/kernel/syscall-definitions.h |  1 +
+ common/source/kernel/ProcessRegistry.cpp    |  1 +
+ common/source/kernel/Syscall.cpp            |  3 +++
+ common/source/kernel/UserProcess.cpp        |  9 +++++++++
+ common/source/mm/PageManager.cpp            |  6 ++++++
+ userspace/tests/magic.c                     |  9 +++++++++
+ userspace/tests/pthr03.c                    |  1 +
+ userspace/tests/reader.c                    | 10 ++++++++++
+ userspace/tests/single_thread.c             | 10 ++++++++++
+ 12 files changed, 55 insertions(+)
+ create mode 100644 userspace/tests/magic.c
+ create mode 100644 userspace/tests/reader.c
+ create mode 100644 userspace/tests/single_thread.c
+
+diff --git a/arch/x86/64/source/ArchMemory.cpp b/arch/x86/64/source/ArchMemory.cpp
+index 462b5753..4995e2a3 100644
+--- a/arch/x86/64/source/ArchMemory.cpp
++++ b/arch/x86/64/source/ArchMemory.cpp
+@@ -201,6 +201,7 @@ ArchMemory &ArchMemory::operator=(ArchMemory const &a)
+ 
+ bool ArchMemory::unmapPage(uint64 virtual_page)
+ {
++  debug(THREAD, "unmappage called\n");
+   map_lock.acquire();
+   ArchMemoryMapping m = resolveMapping(virtual_page);
+ 
+diff --git a/common/include/kernel/ProcessRegistry.h b/common/include/kernel/ProcessRegistry.h
+index 636fac65..9aff988e 100644
+--- a/common/include/kernel/ProcessRegistry.h
++++ b/common/include/kernel/ProcessRegistry.h
+@@ -47,6 +47,8 @@ class ProcessRegistry : public Thread
+ 
+     ustl::map<size_t, size_t> waitpid_map;
+ 
++    size_t shared_ppn;
++
+     ustl::map<size_t, int> core_map_cow;
+     Mutex cow_lock_;
+     Mutex process_lock_;
+diff --git a/common/include/kernel/Thread.h b/common/include/kernel/Thread.h
+index 19f90040..ce0e43f0 100644
+--- a/common/include/kernel/Thread.h
++++ b/common/include/kernel/Thread.h
+@@ -129,6 +129,8 @@ class Thread
+ 
+     size_t sleep_seconds;
+ 
++    size_t shared_address;
++
+     /**
+      * A part of the single-chained waiters list for the locks.
+      * It references to the next element of the list.
+diff --git a/common/include/kernel/syscall-definitions.h b/common/include/kernel/syscall-definitions.h
+index b58c19a4..1970e4b5 100644
+--- a/common/include/kernel/syscall-definitions.h
++++ b/common/include/kernel/syscall-definitions.h
+@@ -45,6 +45,7 @@
+ #define sc_cpu_clock 3000
+ #define sc_sleep 3001
+ #define sc_usleep 3002
++#define sc_get_shared 3003
+ 
+ 
+ typedef void*(*funPointer)(void*);
+diff --git a/common/source/kernel/ProcessRegistry.cpp b/common/source/kernel/ProcessRegistry.cpp
+index 822cc65e..93cf0e13 100644
+--- a/common/source/kernel/ProcessRegistry.cpp
++++ b/common/source/kernel/ProcessRegistry.cpp
+@@ -15,6 +15,7 @@ ProcessRegistry::ProcessRegistry(FileSystemInfo *root_fs_info, char const *progs
+     counter_lock_("ProcessRegistry::counter_lock_"),
+     all_processes_killed_(&counter_lock_, "ProcessRegistry::all_processes_killed_")
+ {
++  shared_ppn = PageManager::instance()->allocPPN();
+   instance_ = this; // instance_ is static! -> Singleton-like behaviour
+ }
+ 
+diff --git a/common/source/kernel/Syscall.cpp b/common/source/kernel/Syscall.cpp
+index 70ab0d08..2243a855 100644
+--- a/common/source/kernel/Syscall.cpp
++++ b/common/source/kernel/Syscall.cpp
+@@ -106,6 +106,9 @@ size_t Syscall::syscallException(size_t syscall_number, size_t arg1, size_t arg2
+     case sc_sleep:
+       return_value = sleep(arg1);
+       break;
++    case sc_get_shared:
++      return_value = currentThread->shared_address;
++      break;
+     default:
+       return_value = -1;
+       kprintf("Syscall::syscallException: Unimplemented Syscall Number %zd\n", syscall_number);
+diff --git a/common/source/kernel/UserProcess.cpp b/common/source/kernel/UserProcess.cpp
+index b992c59e..dfe89208 100644
+--- a/common/source/kernel/UserProcess.cpp
++++ b/common/source/kernel/UserProcess.cpp
+@@ -224,7 +224,16 @@ void UserProcess::allocateStacks(Thread* thread)
+ 
+   size_t ppn = PageManager::instance()->allocPPN();
+   bool result = loader_->arch_memory_.mapPage(reservedVPN + (STACK_MAX / PAGE_SIZE - 1), ppn, 1);
++  debug(THREAD, "mapped page at %lu\n",reservedVPN + (STACK_MAX / PAGE_SIZE - 1));
+   thread->vpns.push_back(reservedVPN + (STACK_MAX / PAGE_SIZE - 1));
+   assert(result);
+   thread->user_registers_->rsp = (reservedVPN + (STACK_MAX / PAGE_SIZE)) * PAGE_SIZE - sizeof(pointer);
++  // debug(THREAD, "rsp at %p\n",(reservedVPN + (STACK_MAX / PAGE_SIZE)) * PAGE_SIZE - sizeof(pointer));
++
++
++  // debug(THREAD, "shared at %lu\n ",reservedVPN + (STACK_MAX / PAGE_SIZE - 6));
++  size_t shared_ppn = ProcessRegistry::instance()->shared_ppn;
++  bool result2 = loader_->arch_memory_.mapPage(reservedVPN + (STACK_MAX / PAGE_SIZE - 6), shared_ppn, 1);
++  thread->shared_address = thread ->user_registers_ -> rsp - 5 * PAGE_SIZE;
++  assert(result2);
+ }
+diff --git a/common/source/mm/PageManager.cpp b/common/source/mm/PageManager.cpp
+index 8cdbc800..d28d5177 100644
+--- a/common/source/mm/PageManager.cpp
++++ b/common/source/mm/PageManager.cpp
+@@ -6,6 +6,7 @@
+ #include "ArchMemory.h"
+ #include "kprintf.h"
+ #include "Scheduler.h"
++#include "ProcessRegistry.h"
+ #include "KernelMemoryManager.h"
+ #include "assert.h"
+ #include "Bitmap.h"
+@@ -230,6 +231,11 @@ uint32 PageManager::allocPPN(uint32 page_size)
+ void PageManager::freePPN(uint32 page_number, uint32 page_size)
+ {
+   assert((page_size % PAGE_SIZE) == 0);
++  if(page_number == ProcessRegistry::instance()->shared_ppn)
++  {
++    debug(PROCESS_REG, "not deleting shared\n");
++    return;
++  }
+   if(page_number > getTotalNumPages())
+   {
+     debug(PM, "Tried to free PPN %u (=%x)\n", page_number, page_number);
+diff --git a/userspace/tests/magic.c b/userspace/tests/magic.c
+new file mode 100644
+index 00000000..a4587c9f
+--- /dev/null
++++ b/userspace/tests/magic.c
+@@ -0,0 +1,9 @@
++#include "stdio.h"
++#include "stdlib.h"
++
++int main()
++{
++    size_t* address = (size_t*) 0xDEADDEAD;
++    *address = 5;
++    return 0;
++}
+\ No newline at end of file
+diff --git a/userspace/tests/pthr03.c b/userspace/tests/pthr03.c
+index b459ae77..591ff8b0 100644
+--- a/userspace/tests/pthr03.c
++++ b/userspace/tests/pthr03.c
+@@ -11,6 +11,7 @@ int main() {
+     int arg = 42;
+     pthread_t thread_id;
+     pthread_create(&thread_id, NULL, fun_with_args, &arg);
++    pthread_join(thread_id, NULL);
+     pthread_exit(0);
+     return 0;
+ }
+\ No newline at end of file
+diff --git a/userspace/tests/reader.c b/userspace/tests/reader.c
+new file mode 100644
+index 00000000..09bb2e97
+--- /dev/null
++++ b/userspace/tests/reader.c
+@@ -0,0 +1,10 @@
++#include "stdio.h"
++#include "syscall.h"
++
++int main()
++{
++    size_t * address = (size_t*) __syscall(sc_get_shared, 0x0, 0x0, 0x0, 0x0, 0x0);
++    printf("address %lu\n", *address);
++    
++    return 0;
++}
+\ No newline at end of file
+diff --git a/userspace/tests/single_thread.c b/userspace/tests/single_thread.c
+new file mode 100644
+index 00000000..daf2f01b
+--- /dev/null
++++ b/userspace/tests/single_thread.c
+@@ -0,0 +1,10 @@
++#include "stdio.h"
++#include "syscall.h"
++
++int main()
++{
++    size_t * address = (size_t*) __syscall(sc_get_shared, 0x0, 0x0, 0x0, 0x0, 0x0);
++    printf("address %p\n",(void*) address);
++    * address = 5;
++    return 0;
++}
+\ No newline at end of file
+-- 
+2.34.1
+
