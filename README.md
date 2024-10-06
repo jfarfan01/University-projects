@@ -22,6 +22,9 @@ __Computer Vision__
 The first task was an introduction to the OpenCV libray in C++. A series of operations was performed to find the area, perimeter and center
 of mass of picture of maps of Austria and Graz.
 The second task consisted of implementing the SURF feature detector for impage replacement.
+Relevant source code ot be found in:
+Computer Vision/cgcvmaster-cv-task-1-12130995/src/cv/task1/algorithms.cpp
+Computer Vision/cgcvmaster-cv-task-2-12130995/src/cv/task2/algorithms.cpp
 
 __Introduction to structured programming__
 This class introduces the student to procedural in C.
