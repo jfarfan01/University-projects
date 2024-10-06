@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/A6_sysv_callee.dir/main.c.o CMakeFiles/A6_sysv_callee.dir/sysv_abi.S.o -o A6_sysv_callee 

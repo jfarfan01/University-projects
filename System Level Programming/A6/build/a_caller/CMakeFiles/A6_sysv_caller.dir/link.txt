@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/A6_sysv_caller.dir/caller.c.o CMakeFiles/A6_sysv_caller.dir/call_me.c.o -o A6_sysv_caller 
